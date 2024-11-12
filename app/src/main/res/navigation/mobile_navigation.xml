@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="de.eahjena.wi.mae1.fussball.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <!-- Action to navigate from HomeFragment to TableFragment -->
+        <action
+            android:id="@+id/action_nav_home_to_nav_table"
+            app:destination="@id/nav_table" />
+    </fragment>
+
+    <!-- Table Fragment -->
+    <fragment
+        android:id="@+id/nav_table"
+        android:name="de.eahjena.wi.mae1.fussball.table.TableFragment"
+        android:label="Tabelle"
+        tools:layout="@layout/fragment_table" />
+</navigation>
