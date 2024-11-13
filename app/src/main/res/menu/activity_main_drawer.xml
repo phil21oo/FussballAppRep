@@ -7,12 +7,20 @@
         <!-- Startseite -->
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_results"
+            android:title="Spielergebnisse" />
 
         <!-- Tabelle -->
         <item
             android:id="@+id/nav_table"
             android:title="Tabelle" />
+
+        <!-- Quiz -->
+        <item
+            android:id="@+id/nav_quiz"
+            android:title="Quiz" />
     </group>
 </menu>

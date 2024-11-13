@@ -11,11 +11,15 @@
         android:name="de.eahjena.wi.mae1.fussball.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
-
-        <!-- Action to navigate from HomeFragment to TableFragment -->
         <action
             android:id="@+id/action_nav_home_to_nav_table"
             app:destination="@id/nav_table" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_results"
+            app:destination="@id/nav_results" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_quiz"
+            app:destination="@id/nav_quiz" />
     </fragment>
 
     <!-- Table Fragment -->
@@ -24,4 +28,18 @@
         android:name="de.eahjena.wi.mae1.fussball.table.TableFragment"
         android:label="Tabelle"
         tools:layout="@layout/fragment_table" />
+
+    <!-- Results Fragment -->
+    <fragment
+        android:id="@+id/nav_results"
+        android:name="de.eahjena.wi.mae1.fussball.ResultsFragment"
+        android:label="Spielergebnisse"
+        tools:layout="@layout/fragment_results" />
+
+    <!-- Quiz Fragment -->
+    <fragment
+        android:id="@+id/nav_quiz"
+        android:name="de.eahjena.wi.mae1.fussball.QuizFragment"
+        android:label="Quiz"
+        tools:layout="@layout/fragment_quiz" />
 </navigation>

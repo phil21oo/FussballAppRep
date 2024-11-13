@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/quiz_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bundesliga Quiz"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="24dp" />
+
+    <!-- Frage 1 -->
+    <TextView
+        android:id="@+id/question1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Welches Team hat die meisten Bundesliga-Titel?"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/answerGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton android:id="@+id/answer1_a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bayern München" />
+        <RadioButton android:id="@+id/answer1_b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Borussia Dortmund" />
+        <RadioButton android:id="@+id/answer1_c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hamburger SV" />
+    </RadioGroup>
+
+    <!-- Frage 2 -->
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Welcher Verein wurde 2020 Deutscher Meister?"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:id="@+id/answerGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton android:id="@+id/answer2_a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RB Leipzig" />
+        <RadioButton android:id="@+id/answer2_b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bayern München" />
+        <RadioButton android:id="@+id/answer2_c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Borussia Mönchengladbach" />
+    </RadioGroup>
+
+    <!-- Frage 3 -->
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. Welcher Verein ist als erster in die Bundesliga aufgestiegen?"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:id="@+id/answerGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton android:id="@+id/answer3_a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Schalke 04" />
+        <RadioButton android:id="@+id/answer3_b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Eintracht Braunschweig" />
+        <RadioButton android:id="@+id/answer3_c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Werder Bremen" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz auswerten"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp" />
+</LinearLayout>

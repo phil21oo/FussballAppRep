@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;  // <-- WICHTIGER IMPORT
+import androidx.navigation.Navigation;
 
 import de.eahjena.wi.mae1.fussball.R;
 import de.eahjena.wi.mae1.fussball.databinding.FragmentHomeBinding;
@@ -30,6 +30,17 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(v).navigate(R.id.action_nav_home_to_nav_table)
         );
 
+        // Button für die Navigation zu Spielergebnisse einrichten
+        binding.buttonSpielergebnisse.setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_nav_results)
+        );
+
+        // Button für die Navigation zum Quiz einrichten
+        binding.buttonQuiz.setOnClickListener(v ->
+                Navigation.findNavController(v).navigate(R.id.action_nav_home_to_nav_quiz)
+        );
+
+        // Beispiel-Text setzen
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
