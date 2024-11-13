@@ -30,7 +30,8 @@
             android:text="Verein"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginLeft="52dp"/>
 
         <!-- Tordifferenz-Spaltenüberschrift -->
         <TextView
@@ -40,7 +41,8 @@
             android:text="TD"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginLeft="132dp"/>
 
         <!-- Punkte-Spaltenüberschrift -->
         <TextView
@@ -50,7 +52,8 @@
             android:text="Pkte"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginRight="15dp"/>
     </LinearLayout>
 
     <!-- RecyclerView für die Tabelle -->

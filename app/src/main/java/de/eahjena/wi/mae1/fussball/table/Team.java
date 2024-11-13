@@ -7,7 +7,7 @@ public class Team {
     private int goalDifference;
     private int points;
 
-    public Team(int rank, String logoUrl, String teamName, int goalDifference, int points)
+    public Team(int rank, int logoResId, String teamName, int goalDifference, int points)
     {
         this.rank = rank;
         this.logoUrl = logoUrl;
