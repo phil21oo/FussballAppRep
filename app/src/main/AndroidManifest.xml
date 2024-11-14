@@ -13,10 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FussballApp"
         tools:targetApi="31">
-
-        <!-- Entferne diese Zeile, die auf xml/item_team verweist -->
-        <!-- <meta-data android:name="com.google.android.actions" android:resource="@xml/item_team" /> -->
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -24,6 +20,7 @@
             android:theme="@style/Theme.FussballApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

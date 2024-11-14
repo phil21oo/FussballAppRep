@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +25,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
     @NonNull
     @Override
     public TableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Hier wird die View mit der korrekten Layout-Resource aufgeblasen
+        // Hier wird die View mit der Layout-Resource aufgeblasen
         View view = LayoutInflater.from(context).inflate(R.layout.item_team, parent, false);
         return new TableViewHolder(view);
     }
@@ -37,6 +38,8 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
         holder.teamName.setText(team.getTeamName());  // Setzt den Teamnamen
         holder.points.setText(String.valueOf(team.getPoints()));  // Setzt die Punkte
         holder.goalDifference.setText(String.valueOf(team.getGoalDifference()));  // Setzt die Tordifferenz
+        // Setze das Logo für das Team
+        holder.teamLogo.setImageResource(team.getLogoResId());  // Setzt das Team-Logo
     }
 
     @Override
@@ -45,15 +48,17 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
     }
 
     static class TableViewHolder extends RecyclerView.ViewHolder {
-        TextView rank, teamName, points, goalDifference;  // goalDifference hinzugefügt
+        TextView rank, teamName, points, goalDifference;
+        ImageView teamLogo;  // Füge ImageView für das Logo hinzu
 
         public TableViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Referenziere die TextViews aus der item_team.xml
+            // Referenziere die Views aus der item_team.xml
             rank = itemView.findViewById(R.id.position);
             teamName = itemView.findViewById(R.id.name);
             points = itemView.findViewById(R.id.points);
-            goalDifference = itemView.findViewById(R.id.goal_difference);  // goalDifference hinzugefügt
+            goalDifference = itemView.findViewById(R.id.goal_difference);
+            teamLogo = itemView.findViewById(R.id.team_logo);  // Referenz für das ImageView
         }
     }
 }
