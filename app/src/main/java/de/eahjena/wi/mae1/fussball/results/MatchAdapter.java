@@ -1,4 +1,4 @@
-package de.eahjena.wi.mae1.fussball.adapters;
+package de.eahjena.wi.mae1.fussball.results;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,9 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import de.eahjena.wi.mae1.fussball.R;
-import de.eahjena.wi.mae1.fussball.models.Match;
+import de.eahjena.wi.mae1.fussball.results.Match;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import android.os.Bundle;  // Importiere die Bundle-Klasse
 import de.eahjena.wi.mae1.fussball.results.MatchDetailFragment;
 import java.util.List;
 
@@ -48,19 +49,21 @@ public class MatchAdapter extends RecyclerView.Adapter<MatchAdapter.MatchViewHol
         // Setze einen OnClickListener für jedes Element, um zur Detailseite zu navigieren
         holder.itemView.setOnClickListener(v -> {
             // Erstelle das Fragment für die Details und übergebe die Spiel-Details
-            MatchDetailFragment detailFragment = MatchDetailFragment.newInstance(
-                    match.getHomeTeam(),
-                    match.getAwayTeam(),
-                    match.getHomeScore() + ":" + match.getAwayScore(),
-                    match.getStartTime(),
-                    match.getStadium(),
-                    match.getSpectators(),
-                    match.getScorers()
-            );
+            Bundle args = new Bundle();
+            args.putString("homeTeam", match.getHomeTeam());
+            args.putString("awayTeam", match.getAwayTeam());
+            args.putString("score", match.getHomeScore() + ":" + match.getAwayScore());
+            args.putString("startTime", match.getStartTime());    // Spielstart
+            args.putString("stadium", match.getStadium());     // Stadion
+            args.putString("spectators", match.getSpectators());  // Zuschauer
+            args.putString("scorers", match.getScorers());      // Torschützen
+            args.putInt("homeLogo", match.getHomeLogoResId());  // Übergabe der Home-Logo-Ressource
+            args.putInt("awayLogo", match.getAwayLogoResId());  // Übergabe der Away-Logo-Ressource
+            args.putString("halftimeScore", match.getHalftimeScore());  // Übergabe des Halbzeitergebnisses
 
-            // Navigiere zu den MatchDetails
+            // Navigiere zu den MatchDetails und übergebe die Argumente
             NavController navController = Navigation.findNavController(v);
-            navController.navigate(R.id.action_nav_results_to_matchDetailFragment, null);
+            navController.navigate(R.id.action_nav_results_to_matchDetailFragment, args);
         });
     }
 
